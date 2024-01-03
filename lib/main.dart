@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -23,8 +22,33 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class BottomTabBar extends StatelessWidget {
+class BottomTabBar extends StatefulWidget {
   const BottomTabBar({super.key});
+
+  @override
+  State<BottomTabBar> createState() => _BottomTabBarState();
+}
+
+class _BottomTabBarState extends State<BottomTabBar> {
+  Color homeIconColor = Colors.grey;
+  Color chatIconColor = Colors.grey;
+  Color cartIconColor = Colors.grey;
+  Color accountIconColor = Colors.grey;
+
+  String selected = "";
+
+  void resetColorPreviouslySelectedIcon(String previous) {
+    switch (previous) {
+      case "home":
+        homeIconColor = Colors.grey;
+      case "chat":
+        chatIconColor = Colors.grey;
+      case "cart":
+        cartIconColor = Colors.grey;
+      case "account":
+        accountIconColor = Colors.grey;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,37 +68,61 @@ class BottomTabBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                    onPressed: () {print('clicked');},
-                    icon: const Icon(
+                    onPressed: () {
+                      setState(() {
+                        resetColorPreviouslySelectedIcon(selected);
+                        homeIconColor = Colors.white;
+                        selected = "home";
+                      });
+                    },
+                    icon: Icon(
                         Icons.home_filled,
-                        color: Colors.grey,
+                        color: homeIconColor,
                         size: 25
                     ),
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () {print('clicked');},
-                  icon: const Icon(
+                  onPressed: () {
+                    setState(() {
+                      resetColorPreviouslySelectedIcon(selected);
+                      chatIconColor = Colors.white;
+                      selected = "chat";
+                    });
+                  },
+                  icon: Icon(
                       Icons.chat_rounded,
-                      color: Colors.grey,
+                      color: chatIconColor,
                       size: 25
                   ),
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () {print('clicked');},
-                  icon: const Icon(
+                  onPressed: () {
+                    setState(() {
+                      resetColorPreviouslySelectedIcon(selected);
+                      cartIconColor = Colors.white;
+                      selected = "cart";
+                    });
+                  },
+                  icon: Icon(
                       Icons.shopping_cart_rounded,
-                      color: Colors.grey,
+                      color: cartIconColor,
                       size: 25
                   ),
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () {print('clicked');},
-                  icon: const Icon(
+                  onPressed: () {
+                    setState(() {
+                      resetColorPreviouslySelectedIcon(selected);
+                      accountIconColor = Colors.white;
+                      selected = "account";
+                    });
+                  },
+                  icon: Icon(
                       Icons.account_circle_rounded,
-                      color: Colors.grey,
+                      color: accountIconColor,
                       size: 25
                   ),
                 ),
