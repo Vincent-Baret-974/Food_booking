@@ -87,6 +87,7 @@ class _AppLayoutState extends State<AppLayout> {
                   Container(
                     margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                             'Current location',
@@ -100,13 +101,13 @@ class _AppLayoutState extends State<AppLayout> {
                             const Icon(
                                 Icons.place,
                                 color: Colors.green,
-                                size: 20
+                                size: 25
                             ),
                             const SizedBox(width: 5),
                             Text(
                                 'Saint-Joseph, Réunion',
                                 style: GoogleFonts.poppins(
-                                  fontSize: 14,
+                                  fontSize: 16,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600
                                 ),
