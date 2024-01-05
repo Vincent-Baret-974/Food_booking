@@ -11,7 +11,6 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(20)),
