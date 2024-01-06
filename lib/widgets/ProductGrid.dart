@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'ProductCategoryCard.dart';
 
 class ProductGrid extends StatelessWidget {
   ProductGrid({super.key});
 
-  final List productCategories = [
+  final List productCategoriesFirstRow = [
+    {
+      'title': 'Offers',
+      'image': 'images/offers.png'
+    },
     {
       'title': 'Burger',
       'image': 'images/burger.png'
@@ -19,72 +24,43 @@ class ProductGrid extends StatelessWidget {
     }
   ];
 
+  final List productCategoriesSecondRow = [
+    {
+      'title': 'Coffee',
+      'image': 'images/coffee.png'
+    },
+    {
+      'title': 'Ramen',
+      'image': 'images/ramen.png'
+    },
+    {
+      'title': 'Rice',
+      'image': 'images/rice.png'
+    },
+    {
+      'title': 'Drinks',
+      'image': 'images/drink.png'
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: productCategories.map((productCategory) {
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: productCategoriesFirstRow.map((productCategory) {
             return ProductCategoryCard(productCategoryData: productCategory);
           }).toList(),
         ),
-        const Row(
-          children: [
-            Text('')
-          ],
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: productCategoriesSecondRow.map((productCategory) {
+            return ProductCategoryCard(productCategoryData: productCategory);
+          }).toList(),
         )
       ],
-    );
-  }
-}
-
-class ProductCategoryCard extends StatelessWidget {
-  final Map productCategoryData;
-
-  const ProductCategoryCard({
-    super.key, required this.productCategoryData,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 110,
-      width: 90,
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade100,
-        borderRadius: const BorderRadius.all(Radius.circular(20))
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(100))
-            ),
-            padding: const EdgeInsets.all(10),
-            child: Container(
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  image: DecorationImage(
-                      image: AssetImage(productCategoryData['image']),
-                      fit: BoxFit.scaleDown
-                  )
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Text(
-              productCategoryData['title'],
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w600
-              ),
-          )
-        ],
-      ),
     );
   }
 }

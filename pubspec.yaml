@@ -65,6 +65,11 @@ flutter:
     - images/burger.png
     - images/pizza.png
     - images/salad.png
+    - images/offers.png
+    - images/ramen.png
+    - images/rice.png
+    - images/drink.png
+    - images/coffee.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
