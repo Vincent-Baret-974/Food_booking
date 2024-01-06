@@ -70,6 +70,10 @@ flutter:
     - images/rice.png
     - images/drink.png
     - images/coffee.png
+    - images/mcdo.jpeg
+    - images/kfc.jpeg
+    - images/burger_king.jpeg
+    - images/gladalle.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

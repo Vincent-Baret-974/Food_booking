@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_book_app/widgets/ProductGrid.dart';
+import 'package:food_book_app/widgets/home/featured/FeaturedSection.dart';
 
-import '../widgets/OrderCard.dart';
+import '../widgets/home/OrderCard.dart';
+import '../widgets/home/product/ProductGrid.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,11 +13,15 @@ class HomePage extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 10),
             const OrderCard(),
             const SizedBox(height: 20),
-            ProductGrid()
+            ProductGrid(),
+            const SizedBox(height: 30),
+            FeaturedSection(),
+            const SizedBox(height: 10)
           ],
         ),
       ),
