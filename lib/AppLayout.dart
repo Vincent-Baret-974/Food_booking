@@ -38,6 +38,7 @@ class _AppLayoutState extends State<AppLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBody: true,
         backgroundColor: Colors.white,
         appBar: const CustomAppBar(),
         body: currentPage,

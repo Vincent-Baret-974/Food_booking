@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             ProductGrid(),
             const SizedBox(height: 30),
             FeaturedSection(),
-            const SizedBox(height: 10)
+            const SizedBox(height: 130)
           ],
         ),
       ),
