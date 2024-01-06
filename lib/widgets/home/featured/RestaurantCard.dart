@@ -12,8 +12,10 @@ class RestaurantCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-        width: 180,
+        width: (screenWidth - 8.0 * 4) / 2,
         height: 160,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
@@ -29,7 +31,8 @@ class RestaurantCard extends StatelessWidget {
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
                       image: AssetImage(restaurantData['image']),
-                      fit: BoxFit.cover)
+                      fit: BoxFit.cover
+                  )
               ),
               child: Stack(
                 children: [
